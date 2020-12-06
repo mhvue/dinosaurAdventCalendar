@@ -7,6 +7,7 @@ const dinosaurFacts = [
 
 ]
 
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 //https://www.sciencekids.co.nz/sciencefacts/dinosaurs.html
 
 const date = new Date();
@@ -16,7 +17,7 @@ console.log(date)
 const year = date.getFullYear()
 console.log(year)
 
-let days = "";
+let getDays = "";
 let tdData= "";
 
 //CALENDAR
@@ -25,8 +26,8 @@ $("h2").html("December " + year)
 
 //generating dates
 for(let i = -1; i <= 33; i++){
-    days = i;
-    tdData = $("<td>").html(days).attr("id","day"+days); 
+    getDays = i;
+    tdData = $("<td>").html(getDays).attr("id",`12/${i}/${year}`); 
 
     //1st week
     if(i == -1 || i == 0){
@@ -62,15 +63,20 @@ for(let i = -1; i <= 33; i++){
 //Display Facts
 //each day should have their id 
 //so can click and pop up fact about dinosaur?
+//have to format each day in calendar to MM-DD-YYYY
 
-$("td").click(function(){
+$("td").on("click",function(){
     //$this is grabbing the id per day 
     const eachDayNum = $(this).attr("id");
-    //console.log($this)
-    
-    //modal showing per td clicked on for now. need to make it so only shows for specfic day 
-    $(".msgModal").modal()
-    //loop through array to show a random dinosaur fact
+    console.log(eachDayNum)
+
+    const currentDate = moment()
+    //console.log(currentDate.format("MM/D/YYYY"))
+    if(eachDayNum == currentDate.format("MM/D/YYYY")){
+        //loop through array to show a random dinosaur fact
+        $(".msgModal").modal()
+    }
+
     // for(let j = 0 ; j < dinosaurFacts.length;  j++){
 
 
