@@ -61,9 +61,7 @@ for(let i = -1; i <= 33; i++){
 }
 
 //Display Facts
-//each day should have their id 
-//so can click and pop up fact about dinosaur?
-//have to format each day in calendar to MM-DD-YYYY
+let count = 0;
 
 $("td").on("click",function(){
     //$this is grabbing the id per day 
@@ -78,12 +76,14 @@ $("td").on("click",function(){
         $(".msgModal").modal()
 
       for(let j = 0 ; j < dinosaurFacts.length;  j++){
-          const dinoFact = dinosaurFacts[j];
-        
           //display one fact 
-          $("#dinoFactHolder").html(dinoFact)
+          $("#dinoFactHolder").html(dinosaurFacts[0])
 
         }
+    }
+    else{
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html("<p>Not time to see this fact yet")
     }
 
    
