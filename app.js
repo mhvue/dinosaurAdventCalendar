@@ -16,14 +16,13 @@ let days = "";
 
 //1st week
 for(let i = -1; i <= 5; i++){
-    days = i;
     //hide -1 and 0
     if(i == -1 || i == 0){
-       $("#numberDays").append("<td>"+ days + "</td>").css("visibility:hidden")
+       $("#numberDays").append("<td>"+ days + "</td>");
     }
     else{
+        days = i;
         $("#numberDays").append("<td>"+ days + "</td>");
-
     }
 }
 
