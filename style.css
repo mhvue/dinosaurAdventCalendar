@@ -5,3 +5,8 @@
 td{
     border: 1px solid black;
 }
+
+.rowDays{
+    padding: 10px;
+    height: 100px;
+}

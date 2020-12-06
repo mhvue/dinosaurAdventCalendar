@@ -25,7 +25,6 @@ for(let i = -1; i <= 5; i++){
         $("#numberDays").append("<td>"+ days + "</td>");
     }
 }
-
 //2nd week
 for(let i = 6; i <= 12; i++){
     days = i;
@@ -36,13 +35,11 @@ for(let i = 13; i <= 19; i++){
     days = i;
     $("#numberDays3").append("<td>"+ days + "</td>");
 }
-
 //4th week
 for(let i = 20; i <= 26; i++){
     days = i;
     $("#numberDays4").append("<td>"+ days + "</td>");
 }
-
 //5th week
 for(let i = 27; i <= 31; i++){
     days = i;
