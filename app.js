@@ -4,6 +4,8 @@ const dinosaurFacts = [
     "Birds descended from a type of dinosaurs",
     "The name dinosaur means 'frighteningly big lizard",
     "Dinosaur footprints have been found all over the world and give scientists lots of clues about what made them!",
+    "fact6",
+    "fact7",
 
 ]
 
@@ -65,23 +67,21 @@ let count = 0;
 
 $("td").on("click",function(){
     //$this is grabbing the id per day 
-    const eachDayNum = $(this).attr("id");
-    console.log(eachDayNum)
+    const selectDate = $(this).attr("id");
+    const getNum= $(this).html();
+    console.log(getNum)
 
     const currentDate = moment()
 
     //check if what is clicked matched today's date 
-    if(eachDayNum == currentDate.format("MM/D/YYYY")){
-        //loop through array to show a random dinosaur fact
+    if(selectDate == currentDate.format("MM/D/YYYY")){
+        
         $(".msgModal").modal()
-
-      for(let j = 0 ; j < dinosaurFacts.length;  j++){
-          //display one fact 
-          $("#dinoFactHolder").html(dinosaurFacts[0])
-
-        }
+    //show match dayNum(getNum) to match index 
+        $("#dinoFactHolder").html(dinosaurFacts[getNum])
     }
     //previous date
+    //show prevous fact 
     // else if(){
 
     // }
