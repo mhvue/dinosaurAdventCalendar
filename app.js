@@ -6,6 +6,30 @@ const dinosaurFacts = [
     "Dinosaur footprints have been found all over the world and give scientists lots of clues about what made them!",
     "fact6",
     "fact7",
+    "fact8",
+    "fact9",
+    "fact10",
+    "fact11",
+    "fact12",
+    "fact13",
+    "fact14",
+    "fact15",
+    "fact16",
+    "fact17",
+    "fact18",
+    "fact19",
+    "fact20",
+    "fact21",
+    "fact22",
+    "fact23",
+    "fact24",
+    "fact25",
+    "fact26",
+    "fact27",
+    "fact28",
+    "fact29",
+    "fact30",
+    "fact31",
 
 ]
 
@@ -70,20 +94,27 @@ $("td").on("click",function(){
     const getNum= $(this).html();
     console.log(getNum)
 
+
     const currentDate = moment()
 
     //check if what is clicked matched today's date 
     if(selectDate == currentDate.format("MM/D/YYYY")){
-
         $(".msgModal").modal()
     //show match dayNum(getNum) to match index 
+        console.log(dinosaurFacts[getNum])
         $("#dinoFactHolder").html(dinosaurFacts[getNum])
     }
     //previous date
     //show prevous fact 
-    // else if(){
+    else if(getNum - 1){
+        console.log(getNum)
+        const prevFact= getNum - 1
+        console.log(prevFact)
+        console.log(dinosaurFacts[getNum - 1])
+        $(".msgModal").modal()
+        $("#dinoFactHolder").html(dinosaurFacts[getNum - 1])
 
-    // }
+    }
     //future date 
     else{
         $(".msgModal").modal();
