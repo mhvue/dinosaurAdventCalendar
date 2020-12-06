@@ -9,8 +9,7 @@ const dinosaurFacts = [
 
 ]
 
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-//https://www.sciencekids.co.nz/sciencefacts/dinosaurs.html
+//fact rec'd from: https://www.sciencekids.co.nz/sciencefacts/dinosaurs.html
 
 const date = new Date();
 console.log(date)
@@ -75,7 +74,7 @@ $("td").on("click",function(){
 
     //check if what is clicked matched today's date 
     if(selectDate == currentDate.format("MM/D/YYYY")){
-        
+
         $(".msgModal").modal()
     //show match dayNum(getNum) to match index 
         $("#dinoFactHolder").html(dinosaurFacts[getNum])
