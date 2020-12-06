@@ -20,13 +20,12 @@ let days = "";
 let tdData= "";
 
 //CALENDAR
-
 //displaying month and year 
 $("h2").html("December " + year) 
 
 //generating dates
 for(let i = -1; i <= 33; i++){
-    days = i
+    days = i;
     tdData = $("<td>").html(days).attr("id","day"+days); 
 
     //1st week
@@ -54,14 +53,30 @@ for(let i = -1; i <= 33; i++){
             $("#numberDays5").append("<td>"+ "" + "</td>");
          }
          else{
-        $("#numberDays5").append(tdData);
+            $("#numberDays5").append(tdData);
         }
      }
 
 }
 
-
+//Display Facts
 //each day should have their id 
 //so can click and pop up fact about dinosaur?
 
-//$("#day"+day)
+$("td").click(function(){
+    //$this is grabbing the id per day 
+    const eachDayNum = $(this).attr("id");
+    //console.log($this)
+    
+    //modal showing per td clicked on for now. need to make it so only shows for specfic day 
+    $(".msgModal").modal()
+    //loop through array to show a random dinosaur fact
+    // for(let j = 0 ; j < dinosaurFacts.length;  j++){
+
+
+    // }
+
+
+
+   
+})
