@@ -71,16 +71,22 @@ $("td").on("click",function(){
     console.log(eachDayNum)
 
     const currentDate = moment()
-    //console.log(currentDate.format("MM/D/YYYY"))
+
+    //check if what is clicked matched today's date 
     if(eachDayNum == currentDate.format("MM/D/YYYY")){
         //loop through array to show a random dinosaur fact
         $(".msgModal").modal()
+
+      for(let j = 0 ; j < dinosaurFacts.length;  j++){
+          const dinoFact = dinosaurFacts[j];
+        
+          //display one fact 
+          $("#dinoFactHolder").html(dinoFact)
+
+        }
     }
 
-    // for(let j = 0 ; j < dinosaurFacts.length;  j++){
-
-
-    // }
+   
 
 
 
