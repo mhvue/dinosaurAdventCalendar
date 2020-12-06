@@ -81,6 +81,11 @@ $("td").on("click",function(){
 
         }
     }
+    //previous date
+    // else if(){
+
+    // }
+    //future date 
     else{
         $(".msgModal").modal();
         $("#dinoFactHolder").html("<p>Not time to see this fact yet")
