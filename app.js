@@ -12,43 +12,56 @@ const dinosaurFacts = [
 const date = new Date();
 console.log(date)
 
+//get year
+const year = date.getFullYear()
+console.log(year)
+
 let days = "";
-// let tdData= $("<td>").html(days); 
+let tdData= "";
 
 //CALENDAR
-//1st week
-for(let i = -1; i <= 5; i++){
-    //hide -1 and 0
+
+//displaying month and year 
+$("h2").html("December " + year) 
+
+//generating dates
+for(let i = -1; i <= 33; i++){
+    days = i
+    tdData = $("<td>").html(days).attr("id","day"+days); 
+
+    //1st week
     if(i == -1 || i == 0){
-       $("#numberDays").append("<td>"+ days + "</td>");
+     $("#numberDays").append("<td>"+ "" + "</td>");
     }
+    else if(i >=1 && i <= 5){
+     $("#numberDays").append(tdData);
+    }
+    //2nd week
+    else if(i >= 6 && i <= 12){
+     $("#numberDays2").append(tdData);
+    }
+    //3rd week
+    else if(i >= 13 && i <= 19){
+     $("#numberDays3").append(tdData);
+    }
+    //4th week
+    else if(i >= 20 && i <= 26){
+     $("#numberDays4").append(tdData);
+     }
+     //5th week
     else{
-        days = i;
-        // $("#numberDays").append(tdData);
-        $("#numberDays").append("<td id='day"+ days +"'>" + days + "</td>");
-    }
+         if(i > 31 && i <= 33){
+            $("#numberDays5").append("<td>"+ "" + "</td>");
+         }
+         else{
+        $("#numberDays5").append(tdData);
+        }
+     }
+
 }
-//2nd week
-for(let i = 6; i <= 12; i++){
-    days = i;
-    $("#numberDays2").append("<td id='day"+ days +"'>"+ days + "</td>");
-}
-//3rd week
-for(let i = 13; i <= 19; i++){
-    days = i;
-    $("#numberDays3").append("<td id='day"+ days +"'>" + days + "</td>");
-}
-//4th week
-for(let i = 20; i <= 26; i++){
-    days = i;
-    $("#numberDays4").append("<td id='day"+ days +"'>"+ days + "</td>");
-}
-//5th week
-for(let i = 27; i <= 31; i++){
-    days = i;
-    $("#numberDays5").append("<td id='day"+ days +"'>"+ days + "</td>");
-}
+
 
 //each day should have their id 
 //so can click and pop up fact about dinosaur?
 
+//$("#day"+day)
