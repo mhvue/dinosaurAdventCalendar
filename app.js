@@ -13,7 +13,9 @@ const date = new Date();
 console.log(date)
 
 let days = "";
+// let tdData= $("<td>").html(days); 
 
+//CALENDAR
 //1st week
 for(let i = -1; i <= 5; i++){
     //hide -1 and 0
@@ -22,27 +24,31 @@ for(let i = -1; i <= 5; i++){
     }
     else{
         days = i;
-        $("#numberDays").append("<td>"+ days + "</td>");
+        // $("#numberDays").append(tdData);
+        $("#numberDays").append("<td id='day"+ days +"'>" + days + "</td>");
     }
 }
 //2nd week
 for(let i = 6; i <= 12; i++){
     days = i;
-    $("#numberDays2").append("<td>"+ days + "</td>");
+    $("#numberDays2").append("<td id='day"+ days +"'>"+ days + "</td>");
 }
 //3rd week
 for(let i = 13; i <= 19; i++){
     days = i;
-    $("#numberDays3").append("<td>"+ days + "</td>");
+    $("#numberDays3").append("<td id='day"+ days +"'>" + days + "</td>");
 }
 //4th week
 for(let i = 20; i <= 26; i++){
     days = i;
-    $("#numberDays4").append("<td>"+ days + "</td>");
+    $("#numberDays4").append("<td id='day"+ days +"'>"+ days + "</td>");
 }
 //5th week
 for(let i = 27; i <= 31; i++){
     days = i;
-    $("#numberDays5").append("<td>"+ days + "</td>");
+    $("#numberDays5").append("<td id='day"+ days +"'>"+ days + "</td>");
 }
+
+//each day should have their id 
+//so can click and pop up fact about dinosaur?
 
