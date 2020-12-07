@@ -30,17 +30,14 @@ const dinosaurFacts = [
     "fact29",
     "fact30",
     "fact31",
-
 ]
 
 //fact rec'd from: https://www.sciencekids.co.nz/sciencefacts/dinosaurs.html
 
 const date = new Date();
-console.log(date)
 
 //get year
 const year = date.getFullYear()
-console.log(year)
 
 let getDays = "";
 let tdData= "";
@@ -86,44 +83,32 @@ for(let i = -1; i <= 33; i++){
 }
 
 //Display Facts
-let count = 0;
-
 $("td").on("click",function(){
     //$this is grabbing the id per day 
     const selectDate = $(this).attr("id");
     const getNum= $(this).html();
     console.log(getNum)
-
-
-    const currentDate = moment()
-
-    //check if what is clicked matched today's date 
-    if(selectDate == currentDate.format("MM/D/YYYY")){
+    const currentDate = moment();
+    const getD = currentDate.format("D")
+    //console.log(typeof parseInt(getD))
+    //check if what is clicked matched today's date
+    //current date 
+    if(selectDate === currentDate.format("MM/D/YYYY")){
         $(".msgModal").modal()
     //show match dayNum(getNum) to match index 
-        console.log(dinosaurFacts[getNum])
-        $("#dinoFactHolder").html(dinosaurFacts[getNum])
+        console.log(dinosaurFacts[getNum-1])
+        $("#dinoFactHolder").html("<p class='showFacts'>" + dinosaurFacts[getNum-1])
     }
-    //previous date
-    //show prevous fact 
-    else if(getNum - 1){
-        console.log(getNum)
-        const prevFact= getNum - 1
-        console.log(prevFact)
-        console.log(dinosaurFacts[getNum - 1])
+    // //previous date
+    // //whatever is clicked on, have to check to see if less than current num
+    else if(parseInt(getNum) < parseInt(getD)){
         $(".msgModal").modal()
-        $("#dinoFactHolder").html(dinosaurFacts[getNum - 1])
-
+        $("#dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
-    //future date 
+    //future dates = cannot show 
     else{
         $(".msgModal").modal();
         $("#dinoFactHolder").html("<p>Not time to see this fact yet")
     }
 
-   
-
-
-
-   
-})
+});
