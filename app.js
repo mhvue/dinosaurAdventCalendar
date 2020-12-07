@@ -1,16 +1,22 @@
+const imgs = {
+    dino1: "<img src='./images/triceratops.jpg'>"
+}
+
 const dinosaurFacts = [
+     imgs.dino1,
     "Dinosaurs ruled the Earth for over 160 million years",
     "A person who studies dinosaurs is known as a paleontologist",
     "Birds descended from a type of dinosaurs",
     "The name dinosaur means 'frighteningly big lizard",
     "Dinosaur footprints have been found all over the world and give scientists lots of clues about what made them!",
-    "fact6",
-    "fact7",
-    "fact8",
-    "fact9",
-    "fact10",
-    "fact11",
-    "fact12",
+    "Dreatnoughtus was the largest dinosaur.",
+    "Velociraptors is pronounce 'vell-os-eeraptor' ",
+    "Triceratops had nose horns they used for defence.",
+    "T. Rex had quite a large brain for a dinosaur. This would have helped it hunt better!" +
+    "Large parts of its brain helped its vision and smell-it may have even had telescopic vision.",
+    "Theropods - these are the meat eating dinosaurs.",
+    "Sauropods have long necks and lon tails.",
+     "Apatosaurus lived around 150 million years ago",
     "fact13",
     "fact14",
     "fact15",
@@ -88,31 +94,31 @@ $("td").on("click",function(){
     const selectDate = $(this).attr("id");
     const getNum= $(this).html();
     const currentDate = moment();
-    const getD = currentDate.format("D")
+    const getD = currentDate.format("D");
   
     //check if what is clicked matched today's date
     //current date 
     if(selectDate === currentDate.format("MM/D/YYYY")){
-        $(".msgModal").modal()
-        
-        //show match dayNum(getNum) to match index 
-        $("#dinoFactHolder").html("<p class='showFacts'>" + dinosaurFacts[getNum-1])
+        $(".msgModal").modal();
+
+        //show match getNum to match index-1
+        $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
     }
     // //previous date
     // //whatever is clicked on, have to check to see if less than current num
     else if(parseInt(getNum) < parseInt(getD)){
-        $(".msgModal").modal()
-        $("#dinoFactHolder").html(dinosaurFacts[getNum-1])
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
     }
     //for areas with no dates/num on it  
     else if(getNum == ""){
         $(".msgModal").modal();
-        $("#dinoFactHolder").html("<p>No date here</p>")
+        $("#dinoFactHolder").html("<p>No date here</p>");
     }
     //future dates = cannot show 
     else{
         $(".msgModal").modal();
-        $("#dinoFactHolder").html("<p>Not time to see this fact yet</p>")
+        $("#dinoFactHolder").html("<p>Not time to see this fact yet</p>");
     }
 
 });
