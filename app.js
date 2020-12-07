@@ -125,28 +125,29 @@ $("td").on("click",function(){
 
     //check if what is clicked matched today's date
     //current date 
-    // if(selectDate == currentDate.format("MM/D/YYYY")){
-    //     $(".msgModal").modal();
+    if(selectDate == currentDate.format("MM/D/YYYY")){
+        $(".msgModal").modal();
 
-    //     //show match getNum to match index-1
-    //     $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
-    // }
-    // // //previous date
-    // // //whatever is clicked on, have to check to see if less than current num
-    // else if(parseInt(getNum) < parseInt(getD)){
-    //     $(".msgModal").modal();
-    //     $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
-    // }
+        //show match getNum to match index-1
+        $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
+    }
+    // //previous date
+    // //whatever is clicked on, have to check to see if less than current num
+    else if(parseInt(getNum) < parseInt(getD)){
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
+        // $("td").css("background-color:black") //working to black out days are previous
+    }
 
-    // //for areas with no dates/num on it  
-    // else if(getNum == ""){
-    //     $(".msgModal").modal();
-    //     $("#dinoFactHolder").html("<p>No date here</p>");
-    // }
-    // //future dates = cannot show 
-    // else{
-    //     $(".msgModal").modal();
-    //     $("#dinoFactHolder").html("<p>Not time to see this fact yet</p>");
-    // }
+    //for areas with no dates/num on it  
+    else if(getNum == ""){
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html("<p>No date here</p>");
+    }
+    //future dates = cannot show 
+    else{
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html("<p>Not time to see this fact yet</p>");
+    }
 
 });
