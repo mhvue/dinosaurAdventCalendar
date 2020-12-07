@@ -94,8 +94,8 @@ $("td").on("click",function(){
     //current date 
     if(selectDate === currentDate.format("MM/D/YYYY")){
         $(".msgModal").modal()
-    //show match dayNum(getNum) to match index 
-        console.log(dinosaurFacts[getNum-1])
+        
+        //show match dayNum(getNum) to match index 
         $("#dinoFactHolder").html("<p class='showFacts'>" + dinosaurFacts[getNum-1])
     }
     // //previous date
@@ -104,14 +104,15 @@ $("td").on("click",function(){
         $(".msgModal").modal()
         $("#dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
-    //future dates = cannot show 
+    //for areas with no dates/num on it  
     else if(getNum == ""){
         $(".msgModal").modal();
         $("#dinoFactHolder").html("<p>No date here</p>")
     }
+    //future dates = cannot show 
     else{
         $(".msgModal").modal();
-        $("#dinoFactHolder").html("<p>Not time to see this fact yet")
+        $("#dinoFactHolder").html("<p>Not time to see this fact yet</p>")
     }
 
 });
