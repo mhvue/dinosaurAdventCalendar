@@ -87,10 +87,9 @@ $("td").on("click",function(){
     //$this is grabbing the id per day 
     const selectDate = $(this).attr("id");
     const getNum= $(this).html();
-    console.log(getNum)
     const currentDate = moment();
     const getD = currentDate.format("D")
-    //console.log(typeof parseInt(getD))
+  
     //check if what is clicked matched today's date
     //current date 
     if(selectDate === currentDate.format("MM/D/YYYY")){
@@ -106,6 +105,10 @@ $("td").on("click",function(){
         $("#dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
     //future dates = cannot show 
+    else if(getNum == ""){
+        $(".msgModal").modal();
+        $("#dinoFactHolder").html("<p>No date here</p>")
+    }
     else{
         $(".msgModal").modal();
         $("#dinoFactHolder").html("<p>Not time to see this fact yet")
