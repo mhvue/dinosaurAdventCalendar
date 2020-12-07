@@ -2,8 +2,14 @@
     box-sizing: border-box;
 }
 
-td{
-    border: 1px solid black;
+body{
+    background-image: url("./images/background.jpg");
+    color: white;
+}
+
+td, th{
+    border: 1px solid white;;
+    color: white;
 }
 
 .rowDays{
@@ -13,4 +19,12 @@ td{
 
 img{
     width: 400px;
+}
+
+table{
+    background-color: gray;
+}
+
+h2{
+    text-align: center;
 }
