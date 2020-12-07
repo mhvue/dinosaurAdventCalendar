@@ -10,7 +10,7 @@ const imgs = {
 }
 
 const dinosaurFacts = [
-    "Heterodontonsaurus fossil" + imgs.dino7,
+    "Heterodontonsaurus fossil" + imgs.dino7, //testing img here
     "First dinosaur bones discovered 1677 by Robert Plot -https://www.discovery.com/science/First-Dinosaur-Fossil-Name",
     "Dinosaurs ruled the Earth for over 160 million years",
     "A person who studies dinosaurs is known as a paleontologist",
