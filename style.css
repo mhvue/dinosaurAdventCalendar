@@ -7,9 +7,13 @@ body{
     color: white;
 }
 
-td, th{
-    border: 1px solid white;;
+th{
+    border: 1px solid white;
     color: white;
+}
+td{
+    border: 1px solid white;
+    color: black;
 }
 
 .rowDays{
@@ -28,3 +32,25 @@ table{
 h2{
     text-align: center;
 }
+
+.dinoFactHolder,h5{
+    color: black;
+}
+
+.linkText{
+    color: white;
+}
+
+footer{
+    padding: 20px;
+    background-color: gray;
+    text-align: center;
+}
+li{
+    list-style-position:inside;
+}
+
+table{
+    margin-top: 20px;
+}
+
