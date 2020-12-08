@@ -59,14 +59,15 @@ const dinosaurFacts = [
     "Did dinosaur lay eggs?" + "<br> Yes they did! Dinosaurs lay about 3-5 eggs. Sometime more.",
     "The Stegosaurus had a brain the size of a walnut and is considered a dumb dinosaur.." + imgs.dino9 + "<br>Info by https://www.thedinosaurmuseum.com/dino-facts. Picture by: By Charles R. Knight. Published in Gilmore, C.W. (1914).",
     "The oldest dinosaur is Saltopus. It lived for 245 million years ago." + imgs.dino10 + "<br>Picture by By Conty - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=6812666",
-]
+];
 
-//fact rec'd from: https://www.sciencekids.co.nz/sciencefacts/dinosaurs.html
+
+
 
 const date = new Date();
 
 //get year
-const year = date.getFullYear()
+const year = date.getFullYear();
 
 let getDays = "";
 let tdData= "";
@@ -120,36 +121,36 @@ $("td").on("click",function(){
     const getD = currentDate.format("D");
     console.log($(this)[0])
   
-    $(".msgModal").modal();
-
-    //show match getNum to match index-1
-    $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
+    //this is for testing only;
+    // $(".msgModal").modal();
+    // //show match getNum to match index-1
+    // $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
 
     //check if what is clicked matched today's date
     //current date 
-    // if(selectDate == currentDate.format("MM/D/YYYY")){
-    //     $(".msgModal").modal();
+    if(selectDate == currentDate.format("MM/D/YYYY")){
+        $(".msgModal").modal();
 
-    //     //show match getNum to match index-1
-    //     $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
-    // }
-    // // //previous date
-    // // //whatever is clicked on, have to check to see if less than current num
-    // else if(parseInt(getNum) < parseInt(getD)){
-    //     $(".msgModal").modal();
-    //     $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
-    //     // $("td").css("background-color:black") //working to black out days are previous
-    // }
+        //show match getNum to match index-1
+        $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
+    }
+     //previous date
+    //whatever is clicked on, have to check to see if less than current num
+    else if(parseInt(getNum) < parseInt(getD)){
+        $(".msgModal").modal();
+        $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
+        // $("td").css("background-color:black") //working to black out days are previous
+    }
 
-    // //for areas with no dates/num on it  
-    // else if(getNum == ""){
-    //     $(".msgModal").modal();
-    //     $(".dinoFactHolder").html("No date here");
-    // }
-    // //future dates = cannot show 
-    // else{
-    //     $(".msgModal").modal();
-    //     $(".dinoFactHolder").html("Not time to see this fact yet");
-    // }
+    //for areas with no dates/num on it  
+    else if(getNum == ""){
+        $(".msgModal").modal();
+        $(".dinoFactHolder").html("No date here");
+    }
+    //future dates = cannot show 
+    else{
+        $(".msgModal").modal();
+        $(".dinoFactHolder").html("Not time to see this fact yet");
+    }
 
 });
