@@ -58,3 +58,7 @@ table{
     background-color: black;
     padding: 10px;
 }
+
+.clicked{
+    background-color: green;
+}

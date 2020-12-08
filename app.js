@@ -61,9 +61,6 @@ const dinosaurFacts = [
     "The oldest dinosaur is Saltopus. It lived for 245 million years ago." + imgs.dino10 + "<br>Picture by By Conty - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=6812666",
 ];
 
-
-
-
 const date = new Date();
 
 //get year
@@ -78,7 +75,7 @@ $("h2").html("December " + year)
 //generating dates
 for(let i = -1; i <= 33; i++){
     getDays = i;
-    tdData = $("<td>").html(getDays).attr("id",`12/${i}/${year}`).attr("data-num",i); 
+    tdData = $("<td>").html(getDays).attr("data-date",`12/${i}/${year}`).attr("id","td"+i)
 
     //1st week
     if(i == -1 || i == 0){
@@ -114,13 +111,12 @@ for(let i = -1; i <= 33; i++){
 //Display Facts
 $("td").on("click",function(){
     //$this is grabbing the id per day 
-    const selectDate = $(this).attr("id");
+    const selectDate = $(this).attr("data-date");
     const getNum= $(this).html();
-    console.log(getNum)
     const currentDate = moment();
     const getD = currentDate.format("D");
-    console.log($(this)[0])
-  
+    const getID= $(this).attr("id")
+    
     //this is for testing only;
     // $(".msgModal").modal();
     // //show match getNum to match index-1
@@ -130,7 +126,7 @@ $("td").on("click",function(){
     //current date 
     if(selectDate == currentDate.format("MM/D/YYYY")){
         $(".msgModal").modal();
-
+        $("#"+getID).addClass("clicked")
         //show match getNum to match index-1
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
@@ -139,12 +135,12 @@ $("td").on("click",function(){
     else if(parseInt(getNum) < parseInt(getD)){
         $(".msgModal").modal();
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
-        // $("td").css("background-color:black") //working to black out days are previous
     }
 
     //for areas with no dates/num on it  
     else if(getNum == ""){
         $(".msgModal").modal();
+        $("#"+getID).addClass("clicked")
         $(".dinoFactHolder").html("No date here");
     }
     //future dates = cannot show 
