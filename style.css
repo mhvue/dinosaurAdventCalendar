@@ -29,7 +29,7 @@ table{
     background-color: gray;
 }
 
-h2{
+h2,h1,h6{
     text-align: center;
 }
 
@@ -54,3 +54,7 @@ table{
     margin-top: 20px;
 }
 
+span{
+    background-color: black;
+    padding: 10px;
+}
