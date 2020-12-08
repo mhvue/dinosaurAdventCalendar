@@ -21,7 +21,8 @@ const links = {
     dino4: "<a href = 'https://pbskids.org/dinosaurtrain/games/roarinrelay.html' target='_blank'>Let's race a dinosaur!</a>",
     dino5: "<a href = 'https://youtu.be/G3gXWDYpLAE' target='_blank'>Dinosaur Youtube Video</a>",
     dino6: "<a href = 'https://youtu.be/UrousrAIfYc' target='_blank'>Brachiosaurus Youtube Video</a>",
-    dino7: "<a href = 'https://youtu.be/a73zEfwFN-s' target='_blank'>Brachiosaurus Youtube Video</a>",
+    dino7: "<a href = 'https://youtu.be/a73zEfwFN-s' target='_blank'>Velociraptors Youtube Video</a>",
+    dino8: "<a href = 'https://youtu.be/5Ier8c9WFzE' target='_blank'>Dinosaurs in Arctic Youtube Video</a>",
 
 }
 
@@ -42,21 +43,21 @@ const dinosaurFacts = [
     "First dinosaur bones discovered 1677 by Robert Plot -https://www.discovery.com/science/First-Dinosaur-Fossil-Name",
     "Dinosaurs extinct about 65 million years ago -https://www.kids-dinosaurs.com/dinosaur-extinction.html",
     "The smallest meat eating dinosaurs are Hesperonychus." + imgs.dino2 + "<br>Picture By Nobu Tamura (http://spinops.blogspot.com)",
-    "Allosaurus weight 4 tons." + imgs.dino3 + "<br>By Fred Wierum - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=47577505",
-    "Brachiosaurus name means 'arm-reptiles'" + imgs.dino4 + "<br>-Info https://www.kids-dinosaurs.com/brachiosaurus.html. Picture: By Богданов dmitrchel@mail.ru",
+    "Allosaurus existed before T.Rex. It's also very big dinosaurs that many other dinosaurs were scared of. No dinsoaurs hunted it...it's like a cousin to the T.Rex" + imgs.dino3 + "<br>By Fred Wierum - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=47577505",
+    "Brachiosaurus name means 'arm-reptiles. Stay tune for tomorrow to learn more about these guys!'" + imgs.dino4 + "<br>-Info https://www.kids-dinosaurs.com/brachiosaurus.html. Picture: By Богданов dmitrchel@mail.ru",
     "Let's learn more about the Brachiosaurus! (click to yesterday's date for the picture) "+ links.dino6,
-    "Bone of a Ceratosaurus. Most of the time, they ate fish and crocodiles. Makes sense as they are good swimmers!" + imgs.dino5,
+    "Bone of a Ceratosaurus. Most of the time, they ate fish and crocodiles. Makes sense as they were good swimmers!" + imgs.dino5,
     "Bone of a Triceratops. They have a total of 985 bones!" + imgs.dino6,
     "Joke: What did the dinosaur say when the volacano exploded?....." + "<br> Answer: Have a Lava-ly day! <br> There were a lot of volcanos when dinosuars were alive.",
-    "Heterodontonsaurus have flexible tail." + imgs.dino8 + "<br>Picture: By FunkMonk (Michael B. H.) - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=44921379",
+    "This is a Heterodontonsaurus. The name means different tooth lizard." + imgs.dino8 + "<br>Picture: By FunkMonk (Michael B. H.) - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=44921379",
     "Fossils are remains of ancient animals. It helps us learn about them. Let's play a fossil game! " + links.dino2,
     "Here is the Heterodontonsaurus fossil" + imgs.dino7,
-    "Herbivores means eating plants. <br> Carnivore meants eating meat. <br> Omnivore means eating meat and plants. <br> Most dinosaures were herbivores.",
+    "Mery Christmas!!<br> Did dinosaurs live in the cold too? yes! there are some bones found in the Arctic." + links.dino8,
     "Dinosaurs did not live in oceans, lakes or rivers. Most can paddle through water.",
     "The smallest dinosuar is Lesothosaurus, which is the size of big chickens. -https://www.scholastic.com/teachers/articles/teaching-content/dinosaurs-smallest-largest/",
-    "T. Rex was 12 feet tall. -https://www.scholastic.com/teachers/articles/teaching-content/dinosaurs-smallest-largest/",
-    "Did dinosaur lay eggs?" + "<br> Yes they did! Dinosaurs lay about 3-5 eggs.",
-    "The Stegosaurus had a brain the size of a walnut." + imgs.dino9 + "<br>Info by https://www.thedinosaurmuseum.com/dino-facts. Picture by: By Charles R. Knight. Published in Gilmore, C.W. (1914).",
+    "Guess how tall T. Rex was? <br> He was 12 feet tall. -https://www.scholastic.com/teachers/articles/teaching-content/dinosaurs-smallest-largest/",
+    "Did dinosaur lay eggs?" + "<br> Yes they did! Dinosaurs lay about 3-5 eggs. Sometime more.",
+    "The Stegosaurus had a brain the size of a walnut and is considered a dumb dinosaur.." + imgs.dino9 + "<br>Info by https://www.thedinosaurmuseum.com/dino-facts. Picture by: By Charles R. Knight. Published in Gilmore, C.W. (1914).",
     "The oldest dinosaur is Saltopus. It lived for 245 million years ago." + imgs.dino10 + "<br>Picture by By Conty - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=6812666",
 ]
 
@@ -119,36 +120,36 @@ $("td").on("click",function(){
     const getD = currentDate.format("D");
     console.log($(this)[0])
   
-    // $(".msgModal").modal();
+    $(".msgModal").modal();
 
-    // //show match getNum to match index-1
-    // $("#dinoFactHolder").html(dinosaurFacts[getNum-1]);
+    //show match getNum to match index-1
+    $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
 
     //check if what is clicked matched today's date
     //current date 
-    if(selectDate == currentDate.format("MM/D/YYYY")){
-        $(".msgModal").modal();
+    // if(selectDate == currentDate.format("MM/D/YYYY")){
+    //     $(".msgModal").modal();
 
-        //show match getNum to match index-1
-        $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
-    }
-    // //previous date
-    // //whatever is clicked on, have to check to see if less than current num
-    else if(parseInt(getNum) < parseInt(getD)){
-        $(".msgModal").modal();
-        $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
-        // $("td").css("background-color:black") //working to black out days are previous
-    }
+    //     //show match getNum to match index-1
+    //     $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
+    // }
+    // // //previous date
+    // // //whatever is clicked on, have to check to see if less than current num
+    // else if(parseInt(getNum) < parseInt(getD)){
+    //     $(".msgModal").modal();
+    //     $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
+    //     // $("td").css("background-color:black") //working to black out days are previous
+    // }
 
-    //for areas with no dates/num on it  
-    else if(getNum == ""){
-        $(".msgModal").modal();
-        $(".dinoFactHolder").html("No date here");
-    }
-    //future dates = cannot show 
-    else{
-        $(".msgModal").modal();
-        $(".dinoFactHolder").html("Not time to see this fact yet");
-    }
+    // //for areas with no dates/num on it  
+    // else if(getNum == ""){
+    //     $(".msgModal").modal();
+    //     $(".dinoFactHolder").html("No date here");
+    // }
+    // //future dates = cannot show 
+    // else{
+    //     $(".msgModal").modal();
+    //     $(".dinoFactHolder").html("Not time to see this fact yet");
+    // }
 
 });
