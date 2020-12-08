@@ -108,6 +108,31 @@ for(let i = -1; i <= 33; i++){
 
 }
 
+//trying to get the green background to persist
+// const numbers =[];
+// const compareDays = moment().format("MM/D/YYYY") > moment().subtract(30,"days").format("MM/D/YYYY")
+// for(let j = 0; j < numbers.length; j++){
+//     numbers[i]
+//     if(compareDays == true){
+//         $("#td"+numbers[i]).addClass("clicked")
+//     }
+    
+// }
+
+// console.log(numbers)
+
+//highlight today's date
+function getToday(){
+    const getToday = moment().format("MM/D/YYYY");
+    if(getToday == $("#td"+moment().format("D")).attr("data-date")){
+        $("#td"+moment().format("D")).addClass("clickMe")
+    }
+    
+
+}
+getToday();
+
+
 //Display Facts
 $("td").on("click",function(){
     //$this is grabbing the id per day 
@@ -116,17 +141,13 @@ $("td").on("click",function(){
     const currentDate = moment();
     const getD = currentDate.format("D");
     const getID= $(this).attr("id")
-    
-    //this is for testing only;
-    // $(".msgModal").modal();
-    // //show match getNum to match index-1
-    // $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
+ 
 
     //check if what is clicked matched today's date
     //current date 
     if(selectDate == currentDate.format("MM/D/YYYY")){
         $(".msgModal").modal();
-        $("#"+getID).addClass("clicked")
+        $("#"+getID).removeClass("clickMe").addClass("clicked")
         //show match getNum to match index-1
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
@@ -134,13 +155,13 @@ $("td").on("click",function(){
     //whatever is clicked on, have to check to see if less than current num
     else if(parseInt(getNum) < parseInt(getD)){
         $(".msgModal").modal();
+        $("#"+getID).addClass("clicked")
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
     }
 
     //for areas with no dates/num on it  
     else if(getNum == ""){
         $(".msgModal").modal();
-        $("#"+getID).addClass("clicked")
         $(".dinoFactHolder").html("No date here");
     }
     //future dates = cannot show 

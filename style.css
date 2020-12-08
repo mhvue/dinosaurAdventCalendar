@@ -59,6 +59,11 @@ table{
     padding: 10px;
 }
 
+
+.clickMe{
+    background-color: goldenrod;
+}
+
 .clicked{
     background-color: green;
 }
