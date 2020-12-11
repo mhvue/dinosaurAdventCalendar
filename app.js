@@ -62,7 +62,6 @@ const dinosaurFacts = [
 ];
 
 const date = new Date();
-
 //get year
 const year = date.getFullYear();
 
@@ -149,6 +148,7 @@ $("td").on("click",function(){
         $(".msgModal").modal();
         $("#"+getID).removeClass("clickMe").addClass("clicked")
         //show match getNum to match index-1
+        $(".modal-title").html("Fact For the Day for " + selectDate)
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1])
     }
      //previous date
@@ -156,6 +156,7 @@ $("td").on("click",function(){
     else if(parseInt(getNum) < parseInt(getD)){
         $(".msgModal").modal();
         $("#"+getID).addClass("clicked")
+        $(".modal-title").html("Fact For the Day for " + selectDate)
         $(".dinoFactHolder").html(dinosaurFacts[getNum-1]);
     }
 
@@ -163,10 +164,13 @@ $("td").on("click",function(){
     else if(getNum == ""){
         $(".msgModal").modal();
         $(".dinoFactHolder").html("No date here");
+        $(".modal-title").html("")
+
     }
     //future dates = cannot show 
     else{
         $(".msgModal").modal();
+        $(".modal-title").html("")
         $(".dinoFactHolder").html("Not time to see this fact yet");
     }
 
