@@ -70,7 +70,7 @@ let tdData= "";
 
 //CALENDAR
 //displaying month and year 
-$("h2").html("December " + year) 
+$("h2").html("December 2020") 
 //generating dates
 for(let i = -1; i <= 33; i++){
     getDays = i;
